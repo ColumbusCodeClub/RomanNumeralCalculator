@@ -11,31 +11,13 @@ public class RomanNumeralConverter {
 		romanNumbersMap.put("V", 5);
 		romanNumbersMap.put("X", 10);
 		romanNumbersMap.put("L", 50);
+		romanNumbersMap.put("C", 100);
+		romanNumbersMap.put("D", 500);
+		romanNumbersMap.put("M", 1000);
 	}
 	
-	public Integer convert(String romanNumeral) {
-		
-//		String firstDigit = romanNumeral.substring(0, 1);
-//		String endDigits = romanNumeral.substring(1);
-		
-		
-		
+	public Integer convert(String romanNumeral) {		
 		return arabicNumeralBuilder(0, 0, romanNumeral);
-//		
-//		if(romanNumeral.length() == 1)
-//			return lookUpDigit(firstDigit);
-//		
-//		String nextDigit = endDigits.substring(0, 1);
-//		int digitDifference = lookUpDigit(firstDigit) - lookUpDigit(nextDigit);
-//		if (digitDifference < 0) {
-//			if (endDigits.length() > 1) {
-//			return Math.abs(digitDifference)
-//					+ convert(endDigits.substring(1));
-//			} else {
-//				return Math.abs(digitDifference);
-//			}
-//		}
-//		return lookUpDigit(firstDigit) + convert(endDigits);
 	}
 	
 	private Integer arabicNumeralBuilder(int previousDigitValue, int totalDigitValue, String romanNumeral) {
@@ -51,7 +33,6 @@ public class RomanNumeralConverter {
 		} else {			
 			return arabicNumeralBuilder(digitValue, totalDigitValue+digitValue, endDigits);
 		}
-		
 	}
 
 	private Integer lookUpDigit(String digit) {

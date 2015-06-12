@@ -86,6 +86,29 @@ public class RomanNumeralConverterTest {
 		assertThat(underTest.convert("XLIX"), is(49));
 	}
 	
+	@Test
+	public void shouldConvertCto100() {
+		assertThat(underTest.convert("C"), is(100));
+	}
 	
+	@Test
+	public void shouldConvertDto500() {
+		assertThat(underTest.convert("D"), is(500));
+	}
+	
+	@Test
+	public void shouldConvertMto1000() {
+		assertThat(underTest.convert("M"), is(1000));
+	}
 
+	@Test
+	public void shouldConvertXCIXto99() {
+		assertThat(underTest.convert("XCIX"), is(99));
+	}
+	
+	@Test
+	public void shouldConvertCMXCIXto999() {
+		assertThat(underTest.convert("CMXCIX"), is(999));
+	}
+	
 }
